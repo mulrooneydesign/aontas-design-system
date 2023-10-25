@@ -8,9 +8,9 @@ interface TypographyProps {
 }
 
 export function Header(props: TypographyProps) {
-  const { children, ...rest } = props;
+  const { children, type, ...rest } = props;
 
-  switch (props.type) {
+  switch (type) {
     case 'h1':
       return (
         <h1 className={styles.h1} {...rest}>

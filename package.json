@@ -8,6 +8,15 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/design-system.js",
+      "require": "./dist/*"
+    },
+    "./package.json": "./package.json",
+    "./dist/*": "./dist/*"
+  },
   "sideEffects": [
     "**/*.css"
   ],
