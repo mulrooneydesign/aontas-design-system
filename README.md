@@ -2,7 +2,7 @@
 
 This is just a basic setup for a design system. In future each of the below types could be scoped like @aontas/typography or @aontas/buttons etc.
 
-Aontas is Irish for Atom.
+Aontas is Irish for Union.
 
 ## Typography:
 
