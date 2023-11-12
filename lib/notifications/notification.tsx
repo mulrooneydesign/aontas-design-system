@@ -1,4 +1,4 @@
-import { ReactNode, useRef } from 'react';
+import { ReactNode } from 'react';
 import styles from './styles.module.css';
 
 export type NotificationProps = {
@@ -18,9 +18,6 @@ export function Notification({
   bottom,
   left,
 }: NotificationProps) {
-  // TODO: do we need ref for anything here?
-  const childWrapperRef = useRef<HTMLDivElement>(null);
-
   return (
     <div className={styles.notificationRoot}>
       <div
@@ -33,7 +30,7 @@ export function Notification({
         }}>
         {number}
       </div>
-      <div ref={childWrapperRef}>{children}</div>
+      <div>{children}</div>
     </div>
   );
 }
