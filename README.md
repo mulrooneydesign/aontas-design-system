@@ -4,6 +4,16 @@ This is just a basic setup for a design system. In future each of the below type
 
 Aontas is Irish for Union.
 
+## To Run this locally use NPM link
+
+From the ./lib folder run:
+
+```
+npm link @aontas/design-system
+```
+
+In order to link the @aontas/design-system package when running this locally. This is because the package is not published anywhere currently.
+
 ## Typography:
 
     Headings (H1, H2, H3, etc.)
@@ -52,6 +62,7 @@ Aontas is Irish for Union.
     Dialog boxes
     Popovers
     Tooltips
+    Notifications
 
 ## Cards and Panels:
 
