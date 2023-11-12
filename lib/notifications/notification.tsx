@@ -18,6 +18,7 @@ export function Notification({
   bottom,
   left,
 }: NotificationProps) {
+  // TODO: do we need ref for anything here?
   const childWrapperRef = useRef<HTMLDivElement>(null);
 
   return (
