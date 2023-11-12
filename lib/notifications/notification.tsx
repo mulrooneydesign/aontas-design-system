@@ -1,34 +1,37 @@
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { ReactNode, useRef } from 'react';
 import styles from './styles.module.css';
 
 export type NotificationProps = {
   children: ReactNode;
   number: number;
+  top?: string;
+  right?: string;
+  bottom?: string;
+  left?: string;
 };
 
-export function Notification({ children, number }: NotificationProps) {
-  const [childOffsetHeight, setChildOffsetHeight] = useState<number>();
-  const [childOffsetWidth, setChildOffsetWidth] = useState<number>();
-
+export function Notification({
+  children,
+  number,
+  top,
+  right,
+  bottom,
+  left,
+}: NotificationProps) {
   const childWrapperRef = useRef<HTMLDivElement>(null);
-
-  // use these values to calculate where the notification is
-  // depending on props - calc the CSS programatically.
-
-  // OR just use top, right, bottom, left and pass as CSS to styles.
-  useEffect(() => {
-    console.log(childOffsetHeight, childOffsetWidth);
-  }, [childOffsetHeight, childOffsetWidth]);
-
-  useEffect(() => {
-    if (!childWrapperRef.current) return;
-    setChildOffsetHeight(childWrapperRef.current.offsetHeight);
-    setChildOffsetWidth(childWrapperRef.current.offsetWidth);
-  }, [childWrapperRef]);
 
   return (
     <div className={styles.notificationRoot}>
-      <div className={styles.notificationIcon}>{number}</div>
+      <div
+        className={`${styles.notificationIcon}`}
+        style={{
+          top: top ? `${top}px` : 'unset',
+          right: right ? `${right}px` : 'unset',
+          bottom: bottom ? `${bottom}px` : 'unset',
+          left: left ? `${left}px` : 'unset',
+        }}>
+        {number}
+      </div>
       <div ref={childWrapperRef}>{children}</div>
     </div>
   );
